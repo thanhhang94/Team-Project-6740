@@ -1,19 +1,19 @@
 #data = read.table(file = "/Users/yuewen/Downloads/train.csv", sep = ",", header = TRUE)
 #undersampling
-data1 = read.table(file = "/Users/yuewen/Downloads/data Elsa/sampleUnder2.csv", sep = ",", header = TRUE)
-testdata1 = read.table(file = "/Users/yuewen/Downloads/data Elsa/bank-full-test.csv", sep = ",", header = TRUE)
+data1 = read.table(file = "sampleUnder2.csv", sep = ",", header = TRUE)
+testdata1 = read.table(file = "bank-full-test.csv", sep = ",", header = TRUE)
 
 #smote sampling
-data2 = read.table(file = "/Users/yuewen/Downloads/data Elsa/sampleSmoteClean.csv", sep = ",", header = TRUE)
-testdata2 = read.table(file = "/Users/yuewen/Downloads/data Elsa/sampleSmoteTest.csv", sep = ",", header = TRUE)
+data2 = read.table(file = "sampleSmoteClean.csv", sep = ",", header = TRUE)
+testdata2 = read.table(file = "sampleSmoteTest.csv", sep = ",", header = TRUE)
 
 #normal sampling
-data3 = read.table(file = "/Users/yuewen/Downloads/data Elsa/bank-full-train.csv", sep = ",", header = TRUE)
-testdata3 = read.table(file = "/Users/yuewen/Downloads/data Elsa/bank-full-test.csv", sep = ",", header = TRUE)
+data3 = read.table(file = "bank-full-train.csv", sep = ",", header = TRUE)
+testdata3 = read.table(file = "bank-full-test.csv", sep = ",", header = TRUE)
 
 #over sampling
-data4 = read.table(file = "/Users/yuewen/Downloads/data Elsa/sampleOver2.csv", sep = ",", header = TRUE)
-testdata4 = read.table(file = "/Users/yuewen/Downloads/data Elsa/bank-full-test.csv", sep = ",", header = TRUE)
+data4 = read.table(file = "sampleOver2.csv", sep = ",", header = TRUE)
+testdata4 = read.table(file = "bank-full-test.csv", sep = ",", header = TRUE)
 
 
 data1$y = factor(data1$y)
