@@ -19,7 +19,7 @@ from imblearn.over_sampling import SMOTE
 
 
 
-df0 = pd.read_csv('/Users/Antares/Documents/Rstudio/bank-addition-full-year.csv')
+df0 = pd.read_csv('bank-addition-full-year.csv')
 df0.info()
 
 #### visualize the dataset. show specific imbalanced between 2 classes
@@ -57,7 +57,7 @@ plt.show()
 
 
 
-df = pd.read_csv('/Users/Antares/Documents/Rstudio/feature_engin/bank-full-train.csv')
+df = pd.read_csv('bank-full-train.csv')
 p5 = sns.countplot(df.y)
 countplotDef(p5)
 #### UnderSampling:
@@ -65,8 +65,8 @@ group1 = df.loc[df.y == 1].sample(3800).copy()
 group0 = df.loc[df.y == 0].sample(5000).copy()
 sampleUnder = pd.concat([group1, group0]).sample(8800)
 #### write to csv
-sampleUnder.to_csv('/Users/Antares/Documents/Rstudio/feature_engin/sampleUnder2.csv', sep=',')
-sampleUnder = pd.read_csv('/Users/Antares/Documents/Rstudio/feature_engin/sampleUnder2.csv')
+sampleUnder.to_csv('sampleUnder2.csv', sep=',')
+sampleUnder = pd.read_csv('sampleUnder2.csv')
 
 #### over sample the minority class ()
 group1 = df.loc[df.y == 1].copy()
@@ -78,12 +78,12 @@ while True:
 p2 = sns.countplot(sampleOver.y)
 countplotDef(p2)
 #### write to csv
-sampleOver.to_csv('/Users/Antares/Documents/Rstudio/feature_engin/sampleOver2.csv', sep=',')
-sampleOver = pd.read_csv('/Users/Antares/Documents/Rstudio/feature_engin/sampleOver2.csv')
+sampleOver.to_csv('sampleOver2.csv', sep=',')
+sampleOver = pd.read_csv('sampleOver2.csv')
 
 #### combine oversample and undersample through smote
 from imblearn.over_sampling import SMOTE
-df1 = pd.read_csv('/Users/Antares/Documents/Rstudio/feature_engin/bank-full-allnum-train.csv')
+df1 = pd.read_csv('bank-full-allnum-train.csv')
 X, y = df1.drop(['y'], axis=1), df1.y
 colNames = list(X.columns.values)
 sm = SMOTE(kind = 'borderline2')
@@ -91,8 +91,8 @@ X40, y40 = sm.fit_sample(X, y)
 X40 = pd.DataFrame(X40, columns = colNames)
 y40 = pd.DataFrame(y40, columns = ['y'])
 sampleSmote = pd.concat([y40, X40],axis = 1)
-sampleSmote.to_csv('/Users/Antares/Documents/Rstudio/feature_engin/sampleSmote2.csv', sep=',')
-sampleSmote = pd.read_csv('/Users/Antares/Documents/Rstudio/feature_engin/sampleSmote2.csv')
+sampleSmote.to_csv('sampleSmote2.csv', sep=',')
+sampleSmote = pd.read_csv('sampleSmote2.csv')
 p3 = sns.countplot(sampleSmote.y)
 countplotDef(p3)
 
@@ -119,10 +119,10 @@ plt.show()
 
 
 #### read file:
-file_name = '/Users/Antares/Documents/Rstudio/bank-full-train.csv'
+file_name = 'bank-full-train.csv'
 df = pd.read_csv(file_name)
 df.info()
-file_name = '/Users/Antares/Documents/Rstudio/sampleUnder2.csv'
+file_name = 'sampleUnder2.csv'
 df1 = pd.read_csv(file_name)
 df1.info()
 
