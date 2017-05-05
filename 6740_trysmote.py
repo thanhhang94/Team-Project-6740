@@ -27,9 +27,9 @@ import itertools
 # sampleSmote = pd.concat([y40, X40],axis = 1)
 # sampleSmote.to_csv('/Users/Antares/Documents/sampleSmoteB2.csv', sep=',')
 
-sampleSmote = pd.read_csv('/Users/Antares/Documents/Rstudio/feature_engin/sampleSmote2.csv')
+sampleSmote = pd.read_csv('sampleSmote2.csv')
 sampleSmote.info()
-df1 = pd.read_csv('/Users/Antares/Documents/Rstudio/feature_engin/bank-full-allnum-train.csv')
+df1 = pd.read_csv('bank-full-allnum-train.csv')
 df1.info()
 dataIndex = df1.as_matrix()
 dataset = sampleSmote.as_matrix()
@@ -70,7 +70,7 @@ colList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 18]
 for col in colList:
 	dataset[col] = dataset[col].astype(int)
 
-dataset.to_csv('/Users/Antares/Documents/sampleSmoteClean.csv', sep=',')
+dataset.to_csv('sampleSmoteClean.csv', sep=',')
 
 
 
